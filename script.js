@@ -32,7 +32,7 @@ function handleCellClick(cell) {
 
   if (board[index] || checkWinner()) return;
 
-  board[index] = currentPlayer === player1 ? "X" : "O";
+  board[index] = currentPlayer === player1 ? "x" : "o";
   cell.textContent = board[index];
   cell.classList.add("taken");
 
