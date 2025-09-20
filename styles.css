@@ -1,1 +1,46 @@
-/*  your css code here. If applicable */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+}
+
+.container {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cell {
+  background: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.cell.taken {
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
