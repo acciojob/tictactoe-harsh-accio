@@ -9,8 +9,8 @@ const messageDiv = document.querySelector(".message");
 const cells = document.querySelectorAll(".cell");
 
 document.getElementById("submit").addEventListener("click", () => {
-  player1 = document.getElementById("player-1").value.trim();
-  player2 = document.getElementById("player-2").value.trim();
+  player1 = document.getElementById("player1").value.trim();
+  player2 = document.getElementById("player2").value.trim();
 
   if (!player1 || !player2) {
     alert("Please enter names for both players!");
@@ -37,7 +37,7 @@ function handleCellClick(cell) {
   cell.classList.add("taken");
 
   if (checkWinner()) {
-    messageDiv.textContent = `${currentPlayer}, congratulations you won!;
+    messageDiv.textContent = `${currentPlayer} congratulations you won!`;
   } else if (board.every(cell => cell)) {
     messageDiv.textContent = "It's a draw!";
   } else {
@@ -49,7 +49,7 @@ function handleCellClick(cell) {
 function checkWinner() {
   const winningCombos = [
     [0,1,2],[3,4,5],[6,7,8], // rows
-    [0,3,6],[1,4,7],[2,5,8], // cols
+    [0,3,6],[1,4,7],[2,5,8], // columns
     [0,4,8],[2,4,6]          // diagonals
   ];
 
@@ -63,6 +63,5 @@ function checkWinner() {
       return true;
     }
   }
-
   return false;
 }
